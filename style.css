@@ -1,127 +1,95 @@
-.carousel {
+/* .row{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container >img{
+    width:9rem;
+}
+
+img{
+    width: 3rem;
+}
+ */
+
+ /* cards  */
+
+ .card {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
     width: 100%;
-    height: 300px; /* Adjust the height as needed */
-    position: relative;
-    overflow: hidden;
+    height: auto;
   }
   
-  .carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+  .card-text {
+    margin-top: 10px;
   }
   
-  .carousel img.active {
-    opacity: 1;
-  }
-  
-  @keyframes changeImage {
-    0% {
-      opacity: 0;
-    } 
-    50%{
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  .carousel img:nth-child(1) {
-    animation: changeImage 9s infinite;
-  }
-  
-  .carousel img:nth-child(2) {
-    animation: changeImage 9s infinite 3s;
-  }
-  
-  .carousel img:nth-child(3) {
-    animation: changeImage 9s infinite 6s;
+  /* button effct on project link s */
+
+  .button-container a {
+    text-decoration: none;
   }
 
-  /* type write effct */
-
-  @keyframes typing {
-    from { width: 0; }
+  .button-container a button {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
   }
-  
-  h1 {
+
+  .button-container a button:hover {
+    background-color: #ddd;
+  }
+
+
+/* type out effct slow;u  */
+
+.typewriter {
+    display: inline-block;
     overflow: hidden;
-    border-right: .15em solid orange;
+    animation: typewriter 4s steps(20) 1;
     white-space: nowrap;
-    margin: 0;
-    letter-spacing: .15em;
-    animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+    border-right: 1px solid black;
+    width: 10rem;
   }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: orange; }
-  }
-  /* crad */
 
-  .card {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    animation: grow 1s;
-  }
-  
-  @keyframes grow {
+  @keyframes typewriter {
     0% {
-      width: 50px;
-      height: 50px;
+      width: 0;
     }
-    30%{
-      width:30%;
-      height:30%;
-    }
-    30%{
-      width:30%;
-      height:30%;
-      background-color:red ;
-    }
-    80%{
-      width:50%;
-      height:50%;
+    80% {
+      width: 10rem;
     }
     100% {
-      width: 100%;
-      height: 100%;
+      width: 10rem;
+      border-right: none;
     }
   }
-  
-  /* scale  */
-  .scale-card {
-    width: 200px;
+
+  /* slide up eefffct for card s */
+
+  #cardwork {
+    width: 300px;
     height: 200px;
-    background-color: blue;
-    transition: transform 0.6s;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    position: relative;
+    animation: slide-up 2s forwards;
+    opacity: 0;
   }
-  
-  .scale-card:hover {
-    transform: scale(1.2);
-  }
-  
-  /* pulse anime  */
-  @keyframes pulse {
+
+  @keyframes slide-up {
     0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
+      opacity: 0;
+      transform: translateY(100%);
     }
     100% {
-      transform: scale(1);
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  
-  .pulse-element {
-    animation: pulse 1s infinite;
-  }
-  
